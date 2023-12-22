@@ -120,3 +120,20 @@ h2 {
   height: 30%;
 }
 
+@media screen and (max-width: 768px) {
+  .square {
+    height: 100px;
+    width: 100px;
+  }
+  .game-over {
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 400px) {
+  .square {
+    height: 100px;
+    width: 100px;
+  }
+}
