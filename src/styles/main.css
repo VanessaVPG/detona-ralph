@@ -1,0 +1,122 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-image: url("../images/wall.png");
+}
+
+.menu {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #000;
+  color: #f1f1f1;
+  padding: 2rem 0;
+  border-bottom: 5px solid #ffd700;
+}
+.menu-time, .menu-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: #ffd700;
+}
+
+.menu-time span:nth-child(2), .menu-score :nth-child(2) {
+  color: #ffd700;
+
+}
+.menu-lives {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: #ffd700;
+
+}
+h2 {
+  color: #DC143C;
+}
+
+.panel {
+  display: flex;
+  margin:auto auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.square {
+  height: 150px;
+  width: 150px;
+  border: 1px solid #000;
+  background:  #ffd700;
+}
+
+.enemy {
+  background-image: url("../images/ralph.png");
+  background-size: cover;
+  cursor: pointer;
+}
+
+.game-over {
+  display:none;
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+  color: #DC143C;
+  margin: auto auto;
+  background: #000;
+  height: 100vh;
+}
+
+.game-over-panel {
+  display: flex;
+  margin:auto auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+} 
+
+.game-over-score {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.game-over-score h2, .game-over-score span {
+  color: #fff;
+}
+
+.game-over-score span {
+  color: #ffd700;
+
+  font-size: 2rem;
+}
+
+#restart{
+  cursor: pointer;
+  padding: 1rem;
+  border: 3px dashed #ffd700;
+}
+
+#restart:hover {
+  background: #ffd700;
+  transition: all 0.2s ease-in;
+} 
+
+#ranking {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: #ffd700;
+  padding: 2rem;
+  color: #000;
+  list-style: none;
+}
+#ranking h2 {
+  height: 30%;
+}
+
