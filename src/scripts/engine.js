@@ -13,7 +13,7 @@ const state = {
     gameVelocity: 1000,
     hitPosition: 0,
     result: 0,
-    currentTime: 60,
+    currentTime: 5,
     ranking: []
   },
   actions: {
@@ -37,15 +37,18 @@ function countDown() {
   }
 }
 function atualizarRanking() {
-  state.values.ranking = JSON.parse(localStorage.getItem("ranking"));
+  if(!localStorage.getItem("ranking-detona-ralph")){
+    localStorage.setItem("ranking-detona-ralph", JSON.stringify([]));
+  }
+  state.values.ranking = JSON.parse(localStorage.getItem("ranking-detona-ralph"));
   state.values.ranking.push(state.values.result);
 
   state.values.ranking.sort(function(a, b) {
     return b - a;
   });
   state.values.ranking = state.values.ranking.slice(0, 10);
-  localStorage.setItem("ranking", JSON.stringify(state.values.ranking));
-  state.values.ranking = JSON.parse(localStorage.getItem("ranking"));
+  localStorage.setItem("ranking-detona-ralph", JSON.stringify(state.values.ranking));
+  state.values.ranking = JSON.parse(localStorage.getItem("ranking-detona-ralph"));
   state.values.ranking.forEach((score, index) => {
     state.view.ranking.innerHTML += `<li>${index + 1}º - ${score}</li>`;
   });
